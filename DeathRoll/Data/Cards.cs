@@ -40,7 +40,7 @@ public static class Cards
     public static string ShowCardSimple(Card card)
     {
         var (rank, suit) = ParseRankAndSuit(card);
-        return !card.IsHidden ? $"{rank} {suit}" : "Hidden";
+        return !card.IsHidden ? $"{rank}{suit}" : "";
     }
 
     private static (string, string) ParseRankAndSuit(Card card)
@@ -48,10 +48,19 @@ public static class Cards
         return (
             card.Rank switch
             {
-                1 => "A",
-                11 => "J",
-                12 => "Q",
-                13 => "K",
+                1 => "",
+                11 => "",
+                12 => "",
+                13 => "",
+                2  => "",
+                3  => "",
+                4  => "",
+                5  => "",
+                6  => "",
+                7  => "",
+                8  => "",
+                9  => "",
+                10 => "",
                 _ => card.Rank.ToString()
             },
             card.Suit switch
